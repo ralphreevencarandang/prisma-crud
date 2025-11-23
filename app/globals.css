@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme{
+  --font-zen-kaku: var(--font-zenKaku), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components{
+  .input-field{
+    padding: 12px 16px 12px 16px;
+    font-size: 13px;
+    line-height: 22.5px;
+    width: 100%;
+    border: 1px solid #9E9E9E;
+  }
+  .submit-btn{
+    background-color: #4067EC;
+    padding-top: 13.5px;
+    padding-bottom: 11.5px;
+    color: white;
+    width: 100%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities{
+  .max-container{
+    max-width: 1440px;
+    margin: 0 auto;
+
+  }
+  .padding-x{
+    @apply px-8 sm:px-16
+  }
+  .padding-y{
+    @apply py-8 sm:py-16
+  }
 }
