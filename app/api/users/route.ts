@@ -66,8 +66,8 @@ export const PUT = async ()=>{
 
 export const DELETE = async ()=>{
     try {
-        const user = await prisma.users.delete({
-           where: {id: 6}
+        const user = await prisma.users.deleteMany({
+           where: {age: {gt: 30}}
         })
 
             return NextResponse.json({message: "User successfully updated", user: user}, {status: 201})
